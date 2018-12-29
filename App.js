@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, View } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
@@ -13,7 +13,7 @@ let screen = Dimensions.get('window');
 class HomeScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.ViewStyle}>
         <Home />
       </View>
     );
@@ -23,7 +23,7 @@ class HomeScreen extends React.Component {
 class AboutTngtScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.ViewStyle}>
       <AboutTngt />
       </View>
       );
@@ -33,7 +33,7 @@ class AboutTngtScreen extends React.Component {
 class BookingScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.ViewStyle}>
         <Booking />
       </View>
     );
@@ -43,7 +43,7 @@ class BookingScreen extends React.Component {
 class GalleryScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.ViewStyle}>
         <Gallery />
       </View>
     );
@@ -53,12 +53,20 @@ class GalleryScreen extends React.Component {
 class ProfileScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.ViewStyle}>
         <Profile />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create ({
+  ViewStyle: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+})
 
 const TabNavigator = createBottomTabNavigator({
   Home: { screen: HomeScreen },
