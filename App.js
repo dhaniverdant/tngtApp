@@ -14,7 +14,7 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.ViewStyle}>
-        <Home />
+        <Home Icon="open-book"/>
       </View>
     );
   }
