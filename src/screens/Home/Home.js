@@ -3,7 +3,7 @@ import {
   View,
   Image
 } from 'react-native';
-import { estyles } from './style/HomeStyle'
+import { estyles } from './styles/HomeStyle'
 
 export default class Home extends Component {
   render(){
@@ -13,7 +13,7 @@ export default class Home extends Component {
     return(
       <View>
         <Image
-          source={mainImage}
+          source={ mainImage }
           style={ estyles.imgBackground }
         >
         </Image>
