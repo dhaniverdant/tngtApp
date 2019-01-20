@@ -1,6 +1,13 @@
 import React from 'react';
-import { Dimensions, StyleSheet, View } from 'react-native';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import {
+  Dimensions,
+  StyleSheet,
+  View
+} from 'react-native';
+import {
+  createBottomTabNavigator,
+  createAppContainer
+} from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import Home from './src/screens/Home/Home';
