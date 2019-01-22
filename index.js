@@ -3,4 +3,4 @@ import App from './App';
 import {name as appName} from './app.json';
 import SplashScreen from './src/screens/SplashScreen/SplashScreen'
 
-AppRegistry.registerComponent(appName, () => SplashScreen);
+AppRegistry.registerComponent(appName, () => App);
