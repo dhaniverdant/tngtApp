@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  { Component } from 'react';
 import {
   Dimensions,
   StyleSheet,
@@ -8,7 +8,16 @@ import {
   createBottomTabNavigator,
   createAppContainer
 } from 'react-navigation';
-import { Icon } from 'react-native-elements';
+import {
+  Container,
+  Header,
+  Content,
+  Footer,
+  FooterTab,
+  Button,
+  Icon,
+  Text
+} from 'native-base'
 
 import Home from './src/screens/Home/Home';
 import AboutTngt from './src/screens/AboutTngt/AboutTngt';
@@ -20,9 +29,18 @@ let screen = Dimensions.get('window');
 class HomeScreen extends React.Component {
   render() {
     return (
-      <View style={styles.ViewStyle}>
-        <Home Icon="open-book"/>
-      </View>
+      <Container>
+        <Header />
+        <Content />
+        <Footer>
+          <FooterTab>
+            <Button vertical>
+              <Icon name="apps" />
+              <Text>Apps</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
+      </Container>
     );
   }
 }
