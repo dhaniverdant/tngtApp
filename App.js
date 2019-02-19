@@ -1,104 +1,21 @@
-import React,  { Component } from 'react';
-import {
-  Dimensions,
-  StyleSheet,
-  View
-} from 'react-native';
-import {
-  createBottomTabNavigator,
-  createAppContainer
-} from 'react-navigation';
-import {
-  Container,
-  Header,
-  Content,
-  Footer,
-  FooterTab,
-  Button,
-  Icon,
-  Text
-} from 'native-base'
+import React from "react";
+import { View, Text } from "react-native";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
-import Home from './src/screens/Home/Home';
-import AboutTngt from './src/screens/AboutTngt/AboutTngt';
-import Booking from './src/screens/Booking/Booking';
-import Gallery from './src/screens/Gallery/Gallery';
-import Profile from './src/screens/Profile/Profile';
-
-let screen = Dimensions.get('window');
 class HomeScreen extends React.Component {
   render() {
     return (
-      <Container>
-        <Header />
-        <Content />
-        <Footer>
-          <FooterTab>
-            <Button vertical>
-              <Icon name="apps" />
-              <Text>Apps</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-      </Container>
-    );
-  }
-}
-
-class AboutTngtScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.ViewStyle}>
-      <AboutTngt />
-      </View>
-      );
-    }
-  }
-  
-class BookingScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.ViewStyle}>
-        <Booking />
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>Home Screen</Text>
       </View>
     );
   }
 }
 
-class GalleryScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.ViewStyle}>
-        <Gallery />
-      </View>
-    );
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: HomeScreen
   }
-}
-
-class ProfileScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.ViewStyle}>
-        <Profile />
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create ({
-  ViewStyle: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-})
-
-const TabNavigator = createBottomTabNavigator({
-  Home: { screen: HomeScreen },
-  About: { screen: AboutTngtScreen },
-  Booking: { screen: BookingScreen },
-  Gallery: { screen: GalleryScreen },
-  Profile: { screen: ProfileScreen }
 });
 
-export default createAppContainer(TabNavigator);
+export default createAppContainer(AppNavigator);
